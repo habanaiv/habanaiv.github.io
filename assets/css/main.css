@@ -998,7 +998,7 @@ body {
 
 .work--lockup .slider--next, .work--lockup .slider--prev {
     position: absolute;
-    top: 160px;
+    top: 100px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1823,4 +1823,13 @@ body {
 .outer-nav li.is-vis:nth-child(5) {
     -webkit-transition-delay: .16s;
     transition-delay: .16s
+}
+
+.work .youtube-player{
+    position: relative;
+    top: 30px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: block
 }
