@@ -1861,3 +1861,46 @@ body {
 }
 
 /*SKILLS*/
+
+
+.progress {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+}
+.progress-wrap {
+    background: #f80;
+    margin: 5px 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .progress-bar {
+        background: #ddd;
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+}
+
+.add-indent {
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.li-progress {
+    display: flex;
+    align-items: center;
+}
+
+.ul-progress {
+    list-style-type: inherit;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+.skills {
+    
+}
+
+

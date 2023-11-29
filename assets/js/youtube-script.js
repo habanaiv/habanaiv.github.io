@@ -23,7 +23,6 @@ function initializeYouTubePlayer() {
             'onReady': function (event) {
                 onPlayerReady(event);
             },
-            'onStateChange': onPlayerStateChange
         }
     });
 
@@ -39,24 +38,13 @@ function initializeYouTubePlayer() {
 }
 
 function onPlayerReady(event) {
-    var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                player.playVideo();
-            } else {
-                player.pauseVideo();
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observer.observe(player.getIframe());
+    event.target.pauseVideo();
 }
 
-function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.ENDED) {
-        // Video ended, play the next video in the playlist
-        playNextVideo();
-    }
+
+function stopVideo() {
+    player.stopVideo();
+    videoPlayed = true;
 }
 
 function playPrevVideo() {
@@ -92,3 +80,46 @@ if (typeof YT !== 'undefined' && YT.loaded) {
         initializeYouTubePlayer();
     };
 }
+
+// SIGNATURE PROGRESS
+
+function moveAllProgressBars() {
+    console.log("Move all progress bars")
+        $('.progress:visible').each(function() {
+            var progressPercent = $(this).data('progress-percent');
+            var progressBar = $(this).find('.progress-bar');
+
+            var getPercent = progressPercent / 100;
+            var getProgressWrapWidth = $(this).width();
+            var progressTotal = getPercent * getProgressWrapWidth;
+            var animationLength = 2000;
+
+            // Set the initial state of the progress bar to 0
+            progressBar.css('left', 0);
+
+            // on page load, animate percentage bar to data percentage length
+            // .stop() used to prevent animation queueing
+            progressBar.stop().animate({
+                left: progressTotal
+            }, animationLength);
+        });
+    }
+
+
+// Your JavaScript function to be executed when both classes are added
+function handleClassChange(mutationsList, observer) {
+    const targetElement = document.querySelector('.skills');
+
+    // Check if both classes are present
+    if (targetElement.classList.contains('section--is-active')) {
+        // Your code here
+        moveAllProgressBars()
+    }
+}
+
+// Set up the Mutation Observer
+const targetElement = document.querySelector('.skills');
+const observer = new MutationObserver(handleClassChange);
+
+// Start observing changes in the class attribute
+observer.observe(targetElement, { attributes: true, attributeFilter: ['class'] });
