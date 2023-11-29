@@ -1825,6 +1825,8 @@ body {
     transition-delay: .16s
 }
 
+
+/* EDUUUUUUUU */
 .work .youtube-player{
     position: relative;
     top: 30px;
@@ -1833,3 +1835,29 @@ body {
     transform: translateX(-50%);
     display: block
 }
+
+.ul-edu {
+    list-style-type: inherit;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.li-edu {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.column-edu {
+    flex: 3;
+}
+
+.column-edu-img {
+    flex: 1;
+}
+
+.column-edu-strong {
+    font-size: 20px;
+}
+
+/*SKILLS*/

@@ -1,4 +1,10 @@
-﻿var playlistId = 'PL1HXw3X1CDpGx-LXo-XF6o8IACS-aGIwl'; // Replace with your actual playlist ID
+﻿const playlist = [
+    'OY6tSCH6eJA', //NOC
+    'MPSXoJAIowY', //Oxy
+    'uIWguvQXT2Y', //ReVive
+    'ZYIrz1wd1xg' //OLNG
+    
+]; // Replace with your youtube ID
 var player;
 var currentVideoIndex = 0;
 
@@ -6,16 +12,13 @@ function initializeYouTubePlayer() {
     player = new YT.Player('youtube-player', {
         height: '460',
         width: '940',
-        playerVars: {
-            loop: 0,
-            controls: 0,
-            showinfo: 0,
-            modestbranding: 1,
-            fs: 0,
-            listType: 'playlist',
-            list: playlistId,
-            mute: 1
-        },
+        loop: 0,
+        controls: 0,
+        showinfo: 0,
+        modestbranding: 1,
+        fs: 0,
+        videoId: 'OY6tSCH6eJA',
+        mute: 1,
         events: {
             'onReady': function (event) {
                 onPlayerReady(event);
@@ -60,22 +63,22 @@ function playPrevVideo() {
     currentVideoIndex--;
     // If you want the playlist to loop back to the end when it reaches the beginning
     if (currentVideoIndex < 0) {
-        currentVideoIndex = player.getPlaylist().length - 1;
+        currentVideoIndex = playlist.length - 1;
     }
 
     // Load and play the previous video in the playlist
-    player.playVideoAt(currentVideoIndex);
+    player.loadVideoById(playlist[currentVideoIndex], 0, 'default');
 }
 
 function playNextVideo() {
     currentVideoIndex++;
     // If you want the playlist to loop back to the beginning when it reaches the end
-    if (currentVideoIndex >= player.getPlaylist().length) {
+    if (currentVideoIndex >= playlist.length) {
         currentVideoIndex = 0;
     }
 
     // Load and play the next video in the playlist
-    player.playVideoAt(currentVideoIndex);
+    player.loadVideoById(playlist[currentVideoIndex], 0, 'default');
 }
 
 // Check if the YT object is defined, indicating that the API script has loaded
