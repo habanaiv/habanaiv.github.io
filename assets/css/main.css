@@ -937,7 +937,7 @@ body {
 
 .work--lockup .slider--item-description {
     display: none;
-    max-width: 250px;
+    max-width: 350px;
     margin: 0 auto
 }
 
@@ -1422,7 +1422,7 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 700px;
+    width: 1200px;
     max-width: 75%;
     height: 100%;
     -webkit-box-orient: vertical;
@@ -1885,9 +1885,15 @@ body {
 
 .add-indent {
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 18px;
 }
 
+
+.text-on-right {
+    padding-right: 450px;
+    font-size: 18px;
+    color: black;
+}
 .li-progress {
     display: flex;
     align-items: center;
@@ -1901,6 +1907,26 @@ body {
 
 .skills {
     
+}
+
+.skill-container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-top-section,
+.skills-bottom-section {
+    width: 48%; /* Adjust the width as needed */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Add some styling to improve visibility */
+.skills-top-section,
+.skills-bottom-section {
+    text-align: center;
+    padding: 20px;
 }
 
 
