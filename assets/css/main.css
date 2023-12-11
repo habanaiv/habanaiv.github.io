@@ -1322,7 +1322,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../img/contact-visual.png");
+    background-image: url("../img/Iloilo-Map.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat
@@ -1394,11 +1394,11 @@ body {
 }
 
 .contact--lockup .modal--options li:nth-child(1) {
-    background-color: #1769ff
+    background-color: limegreen;
 }
 
 .contact--lockup .modal--options li:nth-child(2) {
-    background-color: #ea4c89
+    background-color: blue;
 }
 
 .contact--lockup .modal--options li:nth-child(3) {
@@ -1858,6 +1858,10 @@ body {
 
 .column-edu-strong {
     font-size: 20px;
+}
+
+.column-edu-description {
+    font-size: 15px;
 }
 
 /*SKILLS*/
