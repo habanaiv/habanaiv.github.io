@@ -1348,6 +1348,66 @@ body {
     margin: 0 auto
 }
 
+.contact--intro {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 900px;
+    max-width: 75%;
+    height: 100%;
+    -webkit-box-align: center;;
+    -webkit-align-items: center;;
+    -ms-flex-align: center;;
+    align-items: center;;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-start;;
+    margin: 0 auto
+}
+
+@media (max-width: 1180px) {
+    .contact--intro {
+        max-width: 90%
+    }
+}
+
+@media (max-width: 767px) {
+    .contact--intro {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+.contact--intro .modal--options {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.contact--intro .modal--options > li {
+    width: 130px;
+    margin: 0 auto 25px auto
+}
+
+.contact--intro .modal--options li:nth-child(1) {
+    background-color: blue;
+}
+
+.contact--intro .modal--options a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+
 @media (max-width: 1180px) {
     .contact--lockup {
         max-width: 90%
@@ -1404,7 +1464,6 @@ body {
 .contact--lockup .modal--options li:nth-child(3) {
     margin-bottom: 0;
     background-color: #0f33ff;
-    text-transform: uppercase
 }
 
 .contact--lockup .modal--options a {
